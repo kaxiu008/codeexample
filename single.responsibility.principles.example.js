@@ -18,18 +18,19 @@ Caculator.prototype.sum = function () {
         console.log(shape)
         
         if ( shape instanceof Square) {
-            console.log('Square');
+            areas.push(Math.pow(shape.length, 2))
         } else if (shape instanceof Circle) {
-            console.log('Circle');
+            areas.push(Math.PI*Math.pow(shape.radius, 2))
         }
     });
     
     let sum = 0.0
+    sum = areas.reduce((a,b) => a + b, 0);
     
     return sum;
 }
 
-let shapes = [new Circle(2), new Square(5), new Square(5)];
+let shapes = [new Circle(2), new Square(5), new Square(6)];
 console.log(shapes);
 
 let areas = new Caculator(shapes);
