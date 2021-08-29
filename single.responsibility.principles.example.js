@@ -13,10 +13,7 @@ function Caculator(shapes) {
 Caculator.prototype.sum = function () {
     areas = [];
     
-    shapes.forEach((shape) => {
-      
-        console.log(shape)
-        
+    shapes.forEach((shape) => {        
         if ( shape instanceof Square) {
             areas.push(Math.pow(shape.length, 2))
         } else if (shape instanceof Circle) {
